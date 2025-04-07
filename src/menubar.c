@@ -434,7 +434,7 @@ GtkWidget *GuiCreateToolBar(GtkWidget *parent)
 
    /*** Create the toolbar */
 
-   box = gtk_hbox_new(FALSE, 0);
+   box = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
 
    /*** Drive selection */
 

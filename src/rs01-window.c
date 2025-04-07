@@ -151,7 +151,7 @@ void CreateRS01EWindow(Method *method, GtkWidget *parent)
    gtk_misc_set_padding(GTK_MISC(wl->encFootline2), 20, 0);
    gtk_box_pack_start(GTK_BOX(parent), wl->encFootline2, FALSE, FALSE, 3);
 
-   hbox = gtk_hbox_new(FALSE, 0);
+   hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
    gtk_box_pack_start(GTK_BOX(parent), hbox, FALSE, FALSE, 0);
 
    wid = gtk_label_new(NULL);
@@ -336,7 +336,8 @@ void CreateRS01FWindow(Method *method, GtkWidget *parent)
    gtk_notebook_set_show_border(GTK_NOTEBOOK(notebook), FALSE);
    gtk_box_pack_end(GTK_BOX(parent), notebook, FALSE, FALSE, 0);
 
-   hbox = wl->fixFootlineBox = gtk_hbox_new(TRUE, 0);
+   hbox = wl->fixFootlineBox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
+   gtk_box_set_homogeneous(GTK_BOX(hbox), TRUE);
 
    wl->fixCorrected = gtk_label_new(NULL);
    gtk_misc_set_alignment(GTK_MISC(wl->fixCorrected), 0.0, 0.0); 
@@ -617,7 +618,7 @@ void CreateRS01PrefsPage(Method *method, GtkWidget *parent)
    frame = gtk_frame_new(_utf("Redundancy for new error correction files"));
    gtk_box_pack_start(GTK_BOX(parent), frame, FALSE, FALSE, 0);
 
-   vbox = gtk_vbox_new(FALSE, 10);
+   vbox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 10);
    gtk_container_set_border_width(GTK_CONTAINER(vbox), 10);
    gtk_container_add(GTK_CONTAINER(frame), vbox);
 
@@ -627,7 +628,7 @@ void CreateRS01PrefsPage(Method *method, GtkWidget *parent)
    GuiRegisterPreferencesHelpWindow(lwoh);
 
    for(i=0; i<2; i++)
-   {  GtkWidget *hbox = gtk_hbox_new(FALSE, 4);
+   {  GtkWidget *hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 4);
 
       radio = gtk_radio_button_new(NULL);
       g_signal_connect(G_OBJECT(radio), "toggled", G_CALLBACK(toggle_cb), method);
@@ -657,7 +658,7 @@ void CreateRS01PrefsPage(Method *method, GtkWidget *parent)
    GuiRegisterPreferencesHelpWindow(lwoh);
 
    for(i=0; i<2; i++)
-   {  GtkWidget *hbox = gtk_hbox_new(FALSE, 4);
+   {  GtkWidget *hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 4);
 
       radio = gtk_radio_button_new_from_widget(GTK_RADIO_BUTTON(i?wl->radio1B:wl->radio1A));
       g_signal_connect(G_OBJECT(radio), "toggled", G_CALLBACK(toggle_cb), method);
@@ -688,7 +689,7 @@ void CreateRS01PrefsPage(Method *method, GtkWidget *parent)
    GuiRegisterPreferencesHelpWindow(lwoh);
 
    for(i=0; i<2; i++)
-   {  hbox = gtk_hbox_new(FALSE, 4);
+   {  hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 4);
 
       radio = gtk_radio_button_new_from_widget(GTK_RADIO_BUTTON(i?wl->radio1B:wl->radio1A));
       g_signal_connect(G_OBJECT(radio), "toggled", G_CALLBACK(toggle_cb), method);
@@ -736,7 +737,7 @@ void CreateRS01PrefsPage(Method *method, GtkWidget *parent)
    GuiRegisterPreferencesHelpWindow(lwoh);
 
    for(i=0; i<2; i++)
-   {  hbox = gtk_hbox_new(FALSE, 4);
+   {  hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 4);
 
       radio = gtk_radio_button_new_from_widget(GTK_RADIO_BUTTON(i?wl->radio1B:wl->radio1A));
       g_signal_connect(G_OBJECT(radio), "toggled", G_CALLBACK(toggle_cb), method);
@@ -830,7 +831,7 @@ void CreateRS01PrefsPage(Method *method, GtkWidget *parent)
    GuiLockLabelSize(lwoh->linkLabel, _utf("%d MiB of file cache"), 2222);
 
    for(i=0; i<2; i++)
-   {  GtkWidget *hbox = gtk_hbox_new(FALSE, 4);
+   {  GtkWidget *hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 4);
       int n_entries = sizeof(cache_size)/sizeof(int);
 
       lab = gtk_label_new(_utf("Use"));

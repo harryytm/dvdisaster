@@ -928,10 +928,10 @@ void GuiCreateRawEditor(void)
 
       /* Create the main layout of the window */
 
-      outer_box = gtk_vbox_new(FALSE, 0);
+      outer_box = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
       gtk_container_add(GTK_CONTAINER(window), outer_box);
 
-      hbox = gtk_hbox_new(FALSE, 0);
+      hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
       gtk_box_pack_start(GTK_BOX(outer_box), hbox, FALSE, FALSE, 0);
 
       rec->leftLabel = label = gtk_label_new("Reed-Solomon Sudoku");
@@ -942,10 +942,10 @@ void GuiCreateRawEditor(void)
       gtk_misc_set_alignment(GTK_MISC(label), 0.0, 0.0);
       gtk_box_pack_start(GTK_BOX(hbox), label, FALSE, FALSE, 5);
 
-      hbox = gtk_hbox_new(FALSE, 0);
+      hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
       gtk_box_pack_start(GTK_BOX(outer_box), hbox, TRUE, TRUE, 0);
 
-      vbox = gtk_vbox_new(FALSE, 0);
+      vbox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
       gtk_box_pack_start(GTK_BOX(hbox), vbox, FALSE, FALSE, 5);
 
       /* Actions for browsing the raw samples */
@@ -953,13 +953,13 @@ void GuiCreateRawEditor(void)
       label = gtk_label_new(_utf("Browsing"));
       gtk_box_pack_start(GTK_BOX(vbox), label, FALSE, FALSE, 10);
 
-      hbox2 = gtk_hbox_new(FALSE, 0);
+      hbox2 = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
       gtk_box_pack_start(GTK_BOX(vbox), hbox2, FALSE, FALSE, 0);
 
-      vbox1 = gtk_vbox_new(FALSE, 0);
+      vbox1 = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
       gtk_box_pack_start(GTK_BOX(hbox2), vbox1, FALSE, FALSE, 0);
 
-      vbox2 = gtk_vbox_new(FALSE, 0);
+      vbox2 = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
       gtk_box_pack_start(GTK_BOX(hbox2), vbox2, FALSE, FALSE, 0);
 
       button = gtk_button_new_with_label(_utf("button|Load"));
@@ -998,13 +998,16 @@ void GuiCreateRawEditor(void)
       label = gtk_label_new(_utf("Editing"));
       gtk_box_pack_start(GTK_BOX(vbox), label, FALSE, FALSE, 10);
 
-      hbox2 = gtk_hbox_new(TRUE, 0);
+      hbox2 = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
+      gtk_box_set_homogeneous(GTK_BOX(hbox2), TRUE);
       gtk_box_pack_start(GTK_BOX(vbox), hbox2, FALSE, FALSE, 0);
 
-      vbox1 = gtk_vbox_new(TRUE, 0);
+      vbox1 = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
+      gtk_box_set_homogeneous(GTK_BOX(vbox1), TRUE);
       gtk_box_pack_start(GTK_BOX(hbox2), vbox1, TRUE, TRUE, 0);
 
-      vbox2 = gtk_vbox_new(TRUE, 0);
+      vbox2 = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
+      gtk_box_set_homogeneous(GTK_BOX(vbox2), TRUE);
       gtk_box_pack_start(GTK_BOX(hbox2), vbox2, TRUE, TRUE, 0);
 
       button = gtk_button_new_with_label(_utf("button|Load Buf"));

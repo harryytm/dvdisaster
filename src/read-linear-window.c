@@ -365,7 +365,7 @@ void GuiCreateLinearReadWindow(GtkWidget *parent)
    sep = gtk_hseparator_new();
    gtk_box_pack_start(GTK_BOX(parent), sep, FALSE, FALSE, 0);
 
-   hbox = gtk_hbox_new(FALSE, 0);
+   hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
    gtk_box_pack_start(GTK_BOX(parent), hbox, TRUE, TRUE, 0);
 
    curve = Closure->readLinearCurveArea = gtk_drawing_area_new();
@@ -383,7 +383,7 @@ void GuiCreateLinearReadWindow(GtkWidget *parent)
    gtk_notebook_set_show_border(GTK_NOTEBOOK(notebook), FALSE);
    gtk_box_pack_end(GTK_BOX(parent), notebook, FALSE, FALSE, 0);
 
-   hbox = Closure->readLinearFootlineBox = gtk_hbox_new(FALSE, 0);
+   hbox = Closure->readLinearFootlineBox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
    Closure->readLinearSpeed = gtk_label_new(NULL);
    gtk_misc_set_alignment(GTK_MISC(Closure->readLinearSpeed), 0.0, 0.0); 
    gtk_box_pack_start(GTK_BOX(hbox), Closure->readLinearSpeed, FALSE, FALSE, 0);

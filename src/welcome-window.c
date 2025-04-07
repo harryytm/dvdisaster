@@ -52,7 +52,7 @@ void GuiCreateWelcomePage(GtkNotebook *notebook)
 
    align = gtk_alignment_new(0.5, 0.5, 0.0, 0.0);
    ignore = gtk_label_new("welcome_tab");
-   box = show_msg ? gtk_vbox_new(FALSE, 0) : gtk_hbox_new(FALSE, 10);
+   box = show_msg ? gtk_box_new(GTK_ORIENTATION_VERTICAL, 0) : gtk_box_new(GTK_ORIENTATION_VERTICAL, 10);
 
    gtk_notebook_append_page(notebook, align, ignore);
 

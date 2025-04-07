@@ -309,7 +309,8 @@ void CreateRS03FixWindow(Method *method, GtkWidget *parent)
    gtk_notebook_set_show_border(GTK_NOTEBOOK(notebook), FALSE);
    gtk_box_pack_end(GTK_BOX(parent), notebook, FALSE, FALSE, 0);
 
-   hbox = wl->fixFootlineBox = gtk_hbox_new(TRUE, 0);
+   hbox = wl->fixFootlineBox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
+   gtk_box_set_homogeneous(GTK_BOX(hbox), TRUE);
 
    wl->fixCorrected = gtk_label_new(NULL);
    gtk_misc_set_alignment(GTK_MISC(wl->fixCorrected), 0.0, 0.0); 

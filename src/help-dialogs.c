@@ -142,10 +142,10 @@ LabelWithOnlineHelp* GuiCreateLabelWithOnlineHelp(char *title, char *ascii_text)
 
    /* Create the main layout of the window */
 
-   lwoh->vbox = vbox = gtk_vbox_new(FALSE, 0);
+   lwoh->vbox = vbox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
    gtk_container_add(GTK_CONTAINER(window), vbox);
    
-   hbox = gtk_hbox_new(FALSE, 0);
+   hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
    gtk_box_pack_end(GTK_BOX(vbox), hbox, FALSE, FALSE, 0);
 
    button = gtk_button_new_from_stock(GTK_STOCK_CLOSE);
@@ -288,7 +288,7 @@ void GuiAddHelpParagraph(LabelWithOnlineHelp *lwoh, char *format, ...)
 void GuiAddHelpListItem(LabelWithOnlineHelp *lwoh, char *format, ...)
 {  GtkWidget *label = gtk_label_new(NULL);
    GtkWidget *bullet = gtk_label_new(" - ");
-   GtkWidget *hbox = gtk_hbox_new(FALSE, 0);
+   GtkWidget *hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
    va_list argp;
    char *text,*utf;
 
@@ -550,7 +550,7 @@ GtkWidget* GuiShowTextfile(char *title, char *explanation, char *file,
    gtk_window_set_default_size(GTK_WINDOW(dialog), 500, 600);
    g_signal_connect_swapped(dialog, "response", G_CALLBACK(gtk_widget_destroy), dialog);
 
-   vbox = gtk_vbox_new(FALSE, 0);
+   vbox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
    gtk_box_pack_start(GTK_BOX(gtk_dialog_get_content_area(GTK_DIALOG(dialog))), vbox, TRUE, TRUE, 0);
    gtk_container_set_border_width(GTK_CONTAINER(vbox), 5);
 
@@ -684,7 +684,7 @@ void GuiAboutTextWithLink(GtkWidget *parent, char *text, char *action)
       link_end = strchr(head, ']');
 
       if(link_start && link_end)
-      {  GtkWidget *hbox = gtk_hbox_new(FALSE, 0);
+      {  GtkWidget *hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
 
          gtk_box_pack_start(GTK_BOX(parent), hbox, FALSE, FALSE, 0);
 	 *link_start++ = *link_end++ = 0;
@@ -730,7 +730,7 @@ void GuiAboutDialog()
 
    g_signal_connect_swapped(about, "response", G_CALLBACK(gtk_widget_destroy), about);
 
-   vbox = gtk_vbox_new(FALSE, 0);
+   vbox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
    gtk_box_pack_start(GTK_BOX(gtk_dialog_get_content_area(GTK_DIALOG(about))), vbox, FALSE, FALSE, 0);
    gtk_container_set_border_width(GTK_CONTAINER(vbox), 10);
 
