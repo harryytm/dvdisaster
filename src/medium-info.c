@@ -348,7 +348,7 @@ void GuiCreateMediumInfoWindow()
   gtk_misc_set_alignment(GTK_MISC(lab), 0.0, 0.0); 
   gtk_box_pack_start(GTK_BOX(vbox), lab, FALSE, FALSE, 0);
 
-  sep = gtk_hseparator_new();
+  sep = gtk_separator_new(GTK_ORIENTATION_HORIZONTAL);
   gtk_box_pack_start(GTK_BOX(vbox), sep, FALSE, FALSE, 0);
 
   gtk_box_pack_start(GTK_BOX(vbox), gtk_label_new(" "), FALSE, FALSE, 0);

@@ -349,10 +349,10 @@ void GuiCreateAdaptiveReadWindow(GtkWidget *parent)
    gtk_label_set_ellipsize(GTK_LABEL(Closure->readAdaptiveHeadline), PANGO_ELLIPSIZE_END);
    gtk_box_pack_start(GTK_BOX(parent), Closure->readAdaptiveHeadline, FALSE, FALSE, 3);
 
-   sep = gtk_hseparator_new();
+   sep = gtk_separator_new(GTK_ORIENTATION_HORIZONTAL);
    gtk_box_pack_start(GTK_BOX(parent), sep, FALSE, FALSE, 0);
 
-   sep = gtk_hseparator_new();
+   sep = gtk_separator_new(GTK_ORIENTATION_HORIZONTAL);
    gtk_box_pack_start(GTK_BOX(parent), sep, FALSE, FALSE, 0);
 
    d_area = Closure->readAdaptiveDrawingArea = gtk_drawing_area_new();

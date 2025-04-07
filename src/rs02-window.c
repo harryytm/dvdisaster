@@ -63,10 +63,10 @@ void CreateRS02EncWindow(Method *method, GtkWidget *parent)
    gtk_misc_set_padding(GTK_MISC(wl->encHeadline), 5, 0);
    gtk_box_pack_start(GTK_BOX(parent), wl->encHeadline, FALSE, FALSE, 3);
 
-   sep = gtk_hseparator_new();
+   sep = gtk_separator_new(GTK_ORIENTATION_HORIZONTAL);
    gtk_box_pack_start(GTK_BOX(parent), sep, FALSE, FALSE, 0);
 
-   sep = gtk_hseparator_new();
+   sep = gtk_separator_new(GTK_ORIENTATION_HORIZONTAL);
    gtk_box_pack_start(GTK_BOX(parent), sep, FALSE, FALSE, 0);
 
    table = gtk_table_new(2, 2, FALSE);
@@ -263,10 +263,10 @@ void CreateRS02FixWindow(Method *method, GtkWidget *parent)
    gtk_misc_set_padding(GTK_MISC(wl->fixHeadline), 5, 0);
    gtk_box_pack_start(GTK_BOX(parent), wl->fixHeadline, FALSE, FALSE, 3);
 
-   sep = gtk_hseparator_new();
+   sep = gtk_separator_new(GTK_ORIENTATION_HORIZONTAL);
    gtk_box_pack_start(GTK_BOX(parent), sep, FALSE, FALSE, 0);
 
-   sep = gtk_hseparator_new();
+   sep = gtk_separator_new(GTK_ORIENTATION_HORIZONTAL);
    gtk_box_pack_start(GTK_BOX(parent), sep, FALSE, FALSE, 0);
 
    d_area = wl->fixDrawingArea = gtk_drawing_area_new();

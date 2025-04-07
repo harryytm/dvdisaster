@@ -359,10 +359,10 @@ void GuiCreateLinearReadWindow(GtkWidget *parent)
    gtk_label_set_ellipsize(GTK_LABEL(Closure->readLinearHeadline), PANGO_ELLIPSIZE_END);
    gtk_box_pack_start(GTK_BOX(parent), Closure->readLinearHeadline, FALSE, FALSE, 3);
 
-   sep = gtk_hseparator_new();
+   sep = gtk_separator_new(GTK_ORIENTATION_HORIZONTAL);
    gtk_box_pack_start(GTK_BOX(parent), sep, FALSE, FALSE, 0);
 
-   sep = gtk_hseparator_new();
+   sep = gtk_separator_new(GTK_ORIENTATION_HORIZONTAL);
    gtk_box_pack_start(GTK_BOX(parent), sep, FALSE, FALSE, 0);
 
    hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);

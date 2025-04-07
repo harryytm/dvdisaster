@@ -450,7 +450,7 @@ void GuiCreateMainWindow(int *argc, char ***argv)
     wid = GuiCreateMenuBar(outer_box);
     gtk_box_pack_start(GTK_BOX(outer_box), wid, FALSE, FALSE, 0);
 
-    sep = gtk_hseparator_new();
+    sep = gtk_separator_new(GTK_ORIENTATION_HORIZONTAL);
     gtk_box_pack_start(GTK_BOX(outer_box), sep, FALSE, FALSE, 0);
 
     wid = GuiCreateToolBar(outer_box);
@@ -458,7 +458,7 @@ void GuiCreateMainWindow(int *argc, char ***argv)
 
     /* Middle part */
 
-    sep = gtk_hseparator_new();
+    sep = gtk_separator_new(GTK_ORIENTATION_HORIZONTAL);
     gtk_box_pack_start(GTK_BOX(outer_box), sep, FALSE, FALSE, 0);
 
     middle_box = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
@@ -474,7 +474,7 @@ void GuiCreateMainWindow(int *argc, char ***argv)
     wid = create_action_bar((GTK_NOTEBOOK(Closure->notebook)));
     gtk_box_pack_end(GTK_BOX(middle_box), wid, FALSE, FALSE, 3);
 
-    sep = gtk_vseparator_new();
+    sep = gtk_separator_new(GTK_ORIENTATION_VERTICAL);
     gtk_box_pack_end(GTK_BOX(middle_box), sep, FALSE, FALSE, 0);
 
     /* Status bar enclosure */
@@ -482,7 +482,7 @@ void GuiCreateMainWindow(int *argc, char ***argv)
     status_box = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
     gtk_box_pack_end(GTK_BOX(outer_box), status_box, FALSE, FALSE, 0);
 
-    sep = gtk_hseparator_new();
+    sep = gtk_separator_new(GTK_ORIENTATION_HORIZONTAL);
     gtk_box_pack_end(GTK_BOX(outer_box), sep, FALSE, FALSE, 0);
 
     /* Status bar contents. */
